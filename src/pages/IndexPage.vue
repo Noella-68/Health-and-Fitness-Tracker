@@ -24,7 +24,7 @@
               {{ lorem }}
             </q-card-section>
             <q-card-actions align="center">
-              <q-btn class="glossy" color="teal" label="Proceed" />
+              <q-btn class="glossy" color="teal" label="Proceed" @click="$router.push('set-goal')"/>
             </q-card-actions>
           </q-card>
         </q-card-section>
@@ -45,7 +45,7 @@
               {{ lorem }}
             </q-card-section>
             <q-card-actions align="center">
-              <q-btn class="glossy" color="teal" label="Proceed" />
+              <q-btn class="glossy" color="teal" label="Proceed" @click="$router.push('track-progress')"/>
             </q-card-actions>
           </q-card>
         </q-card-section>
@@ -66,7 +66,7 @@
               {{ lorem }}
             </q-card-section>
             <q-card-actions align="center">
-              <q-btn class="glossy" color="teal" label="Proceed" />
+              <q-btn class="glossy" color="teal" label="Proceed" @click="$router.push('diet-plan')"/>
             </q-card-actions>
           </q-card>
         </q-card-section>
@@ -80,8 +80,12 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+const $router = useRouter();
+
 const lorem =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+
 </script>
 
 <style lang="sass" scoped>
