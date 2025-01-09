@@ -1,13 +1,13 @@
 <template>
-  <q-page padding>
-    <q-card flat bordered justify="center">
+  <q-page padding class="heading">
+    <q-card  justify="center" class="q-ma-lg heading " align="center" >
       <q-card-section>
-        <div class="text-h6">Track your workouts and see your progress.</div>
+        <div class="text-h6" >Track your workouts and see your progress.</div>
       </q-card-section>
 
-      <q-separator inset />
 
-      <q-card-section> Join over 100 million people active on fitness therapy </q-card-section>
+
+      <q-card-section > Join over 100 million people active on fitness therapy </q-card-section>
     </q-card>
 
     <br />
@@ -17,12 +17,12 @@
       <q-card flat bordered class="my-card">
         <q-card-section>
           <q-card class="my-card">
-            <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
+            <q-img src="public/images/dietplan.jpg" height="150px" >
               <div class="absolute-bottom text-h6">Diet Plan</div>
             </q-img>
 
             <q-card-section>
-              {{ lorem }}
+              Unlock Your Weight Loss Journey with Our Custom Diet Plan Card
             </q-card-section>
             <q-card-actions align="center">
               <q-btn class="glossy" color="teal" label="Proceed" @click="$router.push('diet-plan')"/>
@@ -38,12 +38,12 @@
       <q-card flat bordered class="my-card">
         <q-card-section>
           <q-card class="my-card">
-            <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
+            <q-img src="public/images/setgoal.jpg" height="150px">
               <div class="absolute-bottom text-h6">Set Goal</div>
             </q-img>
 
             <q-card-section>
-              {{ lorem }}
+              Achieve Your Health & Fitness Goals with Our Goal-Setting Interface
             </q-card-section>
             <q-card-actions align="center">
               <q-btn class="glossy" color="teal" label="Proceed" @click="$router.push('set-goal')"/>
@@ -59,12 +59,12 @@
       <q-card flat bordered class="my-card">
         <q-card-section>
           <q-card class="my-card">
-            <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
+            <q-img src="public/images/mtuprogress.jpeg" height="150px">
               <div class="absolute-bottom text-h6">Track Progress</div>
             </q-img>
 
             <q-card-section>
-              {{ lorem }}
+              Track Your Health & Fitness Progress with Our Progress Dashboard
             </q-card-section>
             <q-card-actions align="center">
               <q-btn class="glossy" color="teal" label="Proceed" @click="$router.push('track-progress')"/>
@@ -86,13 +86,14 @@
 import { useRouter } from "vue-router";
 const $router = useRouter();
 
-const lorem =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-
 </script>
 
 <style lang="sass" scoped>
 .my-card
   width: 100%
   max-width: 250px
+
+.heading
+  border-block: double
+
 </style>
