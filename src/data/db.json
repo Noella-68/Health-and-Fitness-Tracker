@@ -1,0 +1,11 @@
+{
+"dietplan":[
+{"Day":"Monday","id":1,"Calories": "Test", "Fat": "Data", "Carbs": "Ugali", "Protein":"Beef"},
+{"Day":"Tuesday","id":2,"Calories": "Test", "Fat": "Data", "Carbs": "Potato", "Protein":"Pork"},
+{"Day":"Wednesday","id":3,"Calories": "Test", "Fat": "Data", "Carbs": "Rice", "Protein":"Chicken"},
+{"Day":"Thursday", "id":4,"Calories": "Test", "Fat": "Data", "Carbs": "Waru", "Protein":"Fish"},
+{"Day":"Friday", "id":5,"Calories": "Test", "Fat": "Data", "Carbs": "Rice", "Protein":"Beans"},
+{"Day":"Saturday", "id":6,"Calories": "Test", "Fat": "Data", "Carbs": "Mokimo", "Protein":"Mutton"},
+{"Day":"Sunday", "id":7,"Calories": "Test", "Fat": "Data", "Carbs": "Ugali", "Protein":"Milk"}
+]
+}

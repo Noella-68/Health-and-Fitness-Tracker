@@ -13,12 +13,35 @@
               src="https://cdn.quasar.dev/img/donuts.png"
             />
 
-            <div class="text-h4 q-ml-md text-white">Treats</div>
+            <div class="text-h5 q-ml-md text-white">Treats</div>
+            <q-space></q-space>
+
+            <div class="q-pa-md">
+              <div class="q-gutter-md row items-start">
+            <div style="min-width: 250px; max-width: 300px">
+
+        <q-select
+          filled
+          color="white"
+          v-model="modelMultiple"
+          multiple
+          :options="options"
+          use-chips
+          stack-label
+          label="Multiple selection"
+          />
+      </div>
+    </div>
+  </div>
+
+          <q-space></q-space>
+
+            <q-btn push color="white" text-color="primary" label="Update Plan" class="q-mt-lg q-mb-lg" />
           </div>
         </th>
       </tr>
       <tr>
-        <th class="text-left">Dessert (100g serving)</th>
+        <th class="text-left">Days of the Week</th>
         <th class="text-right">Calories</th>
         <th class="text-right">Fat (g)</th>
         <th class="text-right">Carbs (g)</th>
@@ -26,40 +49,12 @@
       </tr>
       </thead>
       <tbody :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'">
-      <tr>
-        <td class="text-left">Frozen Yogurt</td>
-        <td class="text-right">159</td>
-        <td class="text-right">6</td>
-        <td class="text-right">24</td>
-        <td class="text-right">4</td>
-      </tr>
-      <tr>
-        <td class="text-left">Ice cream sandwich</td>
-        <td class="text-right">237</td>
-        <td class="text-right">9</td>
-        <td class="text-right">37</td>
-        <td class="text-right">4.3</td>
-      </tr>
-      <tr>
-        <td class="text-left">Eclair</td>
-        <td class="text-right">262</td>
-        <td class="text-right">16</td>
-        <td class="text-right">23</td>
-        <td class="text-right">6</td>
-      </tr>
-      <tr>
-        <td class="text-left">Cupcake</td>
-        <td class="text-right">305</td>
-        <td class="text-right">3.7</td>
-        <td class="text-right">67</td>
-        <td class="text-right">4.3</td>
-      </tr>
-      <tr>
-        <td class="text-left">Gingerbread</td>
-        <td class="text-right">356</td>
-        <td class="text-right">16</td>
-        <td class="text-right">49</td>
-        <td class="text-right">3.9</td>
+      <tr v-for="item in dietplan" v-bind:key="item.id">
+        <td class="text-left"> {{item.Day}}</td>
+        <td class="text-right">{{item.Calories}}</td>
+        <td class="text-right">{{item.Fat}} </td>
+        <td class="text-right">{{item.Carbs}}</td>
+        <td class="text-right">{{item.Protein}} </td>
       </tr>
       </tbody>
     </q-markup-table>
@@ -69,8 +64,25 @@
 
 
 <script setup>
+import { ref, onMounted} from "vue";
+import axios from 'axios'
 
-</script>
+
+const dietplan = ref ([]);
+
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/dietplan');
+    dietplan.value = response.data;
+  } catch (error) {
+    console.error('Error Fetching dietplan',error);
+  }
+  
+})
+
+
+</script> 
 
 
 <style scoped lang="sass">
